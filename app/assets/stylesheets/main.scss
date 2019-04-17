@@ -1,0 +1,28 @@
+.main-description {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;	
+}
+
+.main-description .block-button {
+  display: block;
+  width: 100%;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(94, 97, 249);
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.main-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 300px;
+	width: 300px;
+}
