@@ -7,10 +7,13 @@ class AccountsController < ApplicationController
 	  @account = Account.new(account_params)
 	 
 	  if @account.save
-	    redirect_to @account
+	    redirect_to '/confirmation'
 	  else
 	    render 'new'
 	  end
+	end
+
+	def confirmation
 	end
 
 

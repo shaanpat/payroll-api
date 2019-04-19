@@ -1,15 +1,17 @@
 @import "bootstrap";
 
-@import "shared/header";
 @import "shared/footer";
 @import "shared/general";
+@import "shared/header";
 
-@import "home/index";
 @import "home/about";
 @import "home/faq";
+@import "home/index";
 @import "home/privacy_policy";
 @import "home/terms_of_service";
 
 @import "accounts/new";
+@import "accounts/confirmation";
 @import "accounts/show";
+
 

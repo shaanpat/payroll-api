@@ -1,23 +1,43 @@
 <div class="container">
-  <%= form_with model: @account do |form| %>
-    <div class="form-group <%= 'has-error' if @account.errors.has_key?(:name) %>">
-      <%= form.label :provider, class: "control-label" %>
-      <%= form.text_field :provider, class: "form-control" %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= form_with model: @account do |form| %>
+        <div class="form-group <%= 'has-error' if @account.errors.has_key?(:provider) %>">
+          <%= form.label :provider, class: "control-label" %>
+          <%= form.select :provider, [ 'ADP', 'Workday', 'Gusto', 'Other' ], {prompt: 'Select Your Provider'}, {class: "form-control"} %>
 
-      <% @account.errors.full_messages_for(:name).each do |message| %>
-        <p class="help-block"><%= message %></p>
+          <% @account.errors.full_messages_for(:name).each do |message| %>
+            <p class="help-block"><%= message %></p>
+          <% end %>
+        </div>
+
+        <div class="form-group <%= 'has-error' if @account.errors.has_key?(:name) %>">
+          <%= form.label :name, class: "control-label" %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Fred Flinstone" %>
+
+          <% @account.errors.full_messages_for(:email).each do |message| %>
+            <p class="help-block"><%= message %></p>
+          <% end %>
+        </div>
+
+        <div class="form-group <%= 'has-error' if @account.errors.has_key?(:email) %>">
+          <%= form.label :username, class: "control-label" %>
+          <%= form.text_field :username, class: "form-control", placeholder: "fred@bedrock.com" %>
+
+          <% @account.errors.full_messages_for(:email).each do |message| %>
+            <p class="help-block"><%= message %></p>
+          <% end %>
+        </div>
+
+        <%= form.submit "Sign Up", class: "btn btn-primary get-started-button" %>
       <% end %>
+      <br/>
+      <div class="get-started-legal">
+          By registering you agree to Verix's <a href="/terms-of-service" target="_blank">Terms of Service</a> &amp; <a href="/privacy-policy" target="_blank">Privacy Policy</a>.
+      </div>
     </div>
-
-    <div class="form-group <%= 'has-error' if @account.errors.has_key?(:email) %>">
-      <%= form.label :username, class: "control-label" %>
-      <%= form.text_field :username, class: "form-control" %>
-
-      <% @account.errors.full_messages_for(:email).each do |message| %>
-        <p class="help-block"><%= message %></p>
-      <% end %>
+    <div class="col-sm-6">
+      <%= image_tag("simplicity.svg", class: "get-started-image") %>
     </div>
-
-    <%= form.submit "Sign Up", class: "btn btn-primary" %>
-  <% end %>
+  </div>
 </div>
