@@ -42,3 +42,46 @@
 	height: 125px;
 	width: 200px;
 }
+
+#getStartedModal .modal-dialog {
+	width: 35%;
+}
+
+#getStartedModal .modal-content {
+	padding: 15px 40px;
+}
+
+#getStartedModal .title {
+	font-size: 20px;
+	font-weight: 300;
+	text-align: center;
+}
+
+#getStartedModal .legal {
+	font-size: 10px;
+	text-align: center;
+}
+
+#getStartedModal .security img {
+	display: block;
+	max-height: 150px;
+	max-width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#getStartedModal .private img {
+	display: block;
+	max-height: 25px;
+	max-width: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#getStartedModal .private .subtitle {
+	color: #999;
+}
+
+#getStartedModal .private-content {
+	margin-left: 5px;
+}

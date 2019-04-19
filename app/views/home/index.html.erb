@@ -5,7 +5,7 @@
 			<p>
 				Verix helps people quickly access their W-2, W-4, &amp; 1099 tax forms so tax season can be a little bit simpler
 			</p>
-			<button type="button" onclick="location.href='/get-started';" class="splash-button">Get Started</button>
+			<button type="button" data-toggle="modal" data-target="#getStartedModal" class="splash-button">Get Started</button>
 		</div>
 		<div class="col-sm-6">
 			<%= image_tag("human-calculator.png", class: "splash-image") %>
@@ -28,3 +28,73 @@
 		</div>
 	</div>
 </div>
+
+
+<div class="modal fade" id="getStartedModal" role="dialog">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="row security">
+				<div class="col-sm-12">
+					<%= image_tag("security-icon.png") %>
+				</div>
+			</div>
+			<br/>
+			<div class="row title">
+				<div class="col-sm-12">
+					Verix links to your payroll provider to collect all your tax forms
+				</div>
+			</div>
+			<br/>
+			<div class="row private">
+				<div class="col-sm-1">
+					<%= image_tag("check-icon.png") %>
+				</div>
+				<div class="col-sm-10 private-content">
+					<p>Secure</p>
+					<p class="subtitle">Transfer of your information is encrypted end-to-end</p>
+				</div>
+			</div>
+			<div class="row private">
+				<div class="col-sm-1">
+					<%= image_tag("check-icon.png") %>
+				</div>
+				<div class="col-sm-10 private-content">
+					<p>Private</p>
+					<p class="subtitle">Your credentials will never be accessible to Verix</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<button type="button" class="splash-button">Continue</button>
+				</div>
+			</div>
+			<br/>
+			<div class="row legal">
+				<div class="col-sm-12">
+					By selecting "Continue" you agree to Verix's Privacy Policy.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <div class="modal-dialog">
+		<div class="modal-content">
+	    <div class="modal-header">
+	      	<h3 class="modal-title">Login Form</h3>
+	    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	    </div>
+	    <div class="modal-body">
+	    	<form role="form">
+	        	<div class="form-group">
+	          		<input type="email" class="form-control" placeholder="Email"/>
+	          		<input type="password" class="form-control" placeholder="Password" />
+	        	</div>
+	      	</form>
+	    </div>
+	    <div class="modal-footer">
+	    	<button class="btn btn-primary btn-block">Log In</button>
+	    </div>
+		</div>
+</div> -->
