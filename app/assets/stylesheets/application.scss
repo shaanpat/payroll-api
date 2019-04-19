@@ -1,15 +1,15 @@
 @import "bootstrap";
 
-@import "header";
-@import "footer";
-@import "main";
-@import "supporters";
-@import "home";
-@import "about";
-@import "faq";
-@import "privacy_policy";
-@import "terms_of_service";
+@import "shared/header";
+@import "shared/footer";
+@import "shared/general";
 
-body {
-	background: #f2f3f6
-}
+@import "home/index";
+@import "home/about";
+@import "home/faq";
+@import "home/privacy_policy";
+@import "home/terms_of_service";
+
+@import "accounts/new";
+@import "accounts/show";
+

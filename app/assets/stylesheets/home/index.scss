@@ -1,0 +1,44 @@
+.splash-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.splash-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 300px;
+	max-width: 300px;
+}
+
+.supporters {
+	margin-top: 50px;
+	margin-bottom: 50px;	
+}
+
+.supporters-title {
+	width: 100%;
+	color: rgb(0, 0, 0);
+	font-weight: 600;
+	text-align: center;
+}
+
+.supporters-list {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.supporters-list img {
+	display: inline-block;
+	height: 125px;
+	width: 200px;
+}

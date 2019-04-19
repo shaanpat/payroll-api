@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <div class="header-container">
+      <%= render "shared/header" %>
+    </div>
     <%= yield %>
+    <div class="footer-container">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

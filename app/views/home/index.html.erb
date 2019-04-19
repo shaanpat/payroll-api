@@ -1,12 +1,30 @@
-<div class="header-container">
-	<%= render "header" %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 splash-description">
+			<h2>The easiest way to access your tax forms</h2>
+			<p>
+				Verix helps people quickly access their W-2, W-4, &amp; 1099 tax forms so tax season can be a little bit simpler
+			</p>
+			<button type="button" class="splash-button">Get Started</button>
+		</div>
+		<div class="col-sm-6">
+			<%= image_tag("human-calculator.png", class: "splash-image") %>
+		</div>
+	</div>
 </div>
-<div class="main-container">
-	<%= render "main" %>
-</div>
-<div class="supporters-container">
-	<%= render "supporters" %>
-</div>
-<div class="footer-container">
-	<%= render "footer" %>
+<div class="container supporters">
+	<div class="row">
+		<h4 class="supporters-title">Trusted &amp; Supported By</h4>
+	</div>
+	<div class="row supporters-list">
+		<div class="col-md-4">
+			<%= image_tag("index-ventures.png", class: "supporters-image") %>
+		</div>
+		<div class="col-md-4">
+			<%= image_tag("pear.png", class: "supporters-image") %>
+		</div>
+		<div class="col-md-4">
+			<%= image_tag("stanford.png", class: "supporters-image") %>
+		</div>
+	</div>
 </div>

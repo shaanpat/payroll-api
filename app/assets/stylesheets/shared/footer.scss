@@ -5,6 +5,12 @@
   background-color: rgb(94, 97, 249);
 }
 
+.footer .row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
 .footer a {
   text-align: center;
   padding: 12px;
@@ -19,12 +25,6 @@
   font-weight: bold;
 }
 
-.footer-info {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-}
-
 .footer-info a {
   font-size: 14px;
   font-weight: bold;
@@ -32,9 +32,6 @@
 }
 
 .footer-legal {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
   margin-top: 10px;
 }
 

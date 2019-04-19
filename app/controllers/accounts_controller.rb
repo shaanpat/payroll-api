@@ -12,4 +12,10 @@ class AccountsController < ApplicationController
 	    render 'new'
 	  end
 	end
+
+
+	private
+	  def account_params
+	    params.require(:account).permit(:provider, :name, :username)
+	  end
 end
