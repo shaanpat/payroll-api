@@ -1,5 +1,5 @@
-<div class="container"
-  <%= form_with model: @account, local: true do |form| %>
+<div class="container">
+  <%= form_with model: @account do |form| %>
     <div class="form-group <%= 'has-error' if @account.errors.has_key?(:name) %>">
       <%= form.label :provider, class: "control-label" %>
       <%= form.text_field :provider, class: "form-control" %>
