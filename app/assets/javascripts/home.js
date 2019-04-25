@@ -7,16 +7,41 @@ jQuery(document).ready(function($){
 		"adp": {
 			identity: "Username"
 		},
+		"workday": {
+			identity: "Email"
+		},
 		"gusto": {
 			identity: "Email"
 		},
 		"paylocity": {
+			identity: "Username"
+		},
+		"paycom": {
+			identity: "Username"
+		},
+		"paychex": {
 			identity: "Email"
 		},
-		"workday": {
+		"sap": {
+			identity: "Email"
+		},
+		"intuit": {
+			identity: "Username"
+		},
+		"oracle": {
+			identity: "Username"
+		},
+		"ultimate": {
+			identity: "Email"
+		},
+		"ceridian": {
+			identity: "Email"
+		},
+		"square": {
 			identity: "Username"
 		},
 	};
+	var allProviders = Object.keys(providerPreferences);
 
 	console.log('Ready');
 	$('.page2').hide();
@@ -40,7 +65,7 @@ jQuery(document).ready(function($){
 		$('.payroll-provider-selected-icon').hide();
 		$('.' + provider).show();
 		// Change style of page
-		$('.share-credentials-button').removeClass('adp gusto paylocity workday').addClass(provider);
+		$('.share-credentials-button').removeClass(allProviders.join(' ')).addClass(provider);
 		// Transition to next page
 		$('.page2').hide();
 		$('.page3').show();

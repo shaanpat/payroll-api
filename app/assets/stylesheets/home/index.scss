@@ -114,7 +114,7 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 10px 30px;
+	padding: 15px 30px;
 	border: 1px solid #999;
 	border-radius: 5px;
 }
@@ -136,6 +136,10 @@
 	background-color: red;
 }
 
+.share-credentials-button.workday {
+	background-color: blue;
+}
+
 .share-credentials-button.gusto {
 	background-color: red;
 }
@@ -144,8 +148,36 @@
 	background-color: orange;
 }
 
-.share-credentials-button.workday {
+.share-credentials-button.paycom {
+	background-color: green;
+}
+
+.share-credentials-button.paychex {
 	background-color: blue;
+}
+
+.share-credentials-button.sap {
+	background-color: blue;
+}
+
+.share-credentials-button.intuit {
+	background-color: blue;
+}
+
+.share-credentials-button.oracle {
+	background-color: red;
+}
+
+.share-credentials-button.ultimate {
+	background-color: green;
+}
+
+.share-credentials-button.ceridan {
+	background-color: blue;
+}
+
+.share-credentials-button.square {
+	background-color: black;
 }
 
 #getStartedModal .payroll-provider-selected img {

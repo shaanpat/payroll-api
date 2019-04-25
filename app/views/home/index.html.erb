@@ -85,52 +85,78 @@
 					</div>
 				</div>
 				<br/>
-				<div class="row payroll">
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider" data-payroll-provider="adp">
-							<%= image_tag("adp.png") %>
-						</a>
+				<div class="payroll-provider-list">
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="adp">
+								<%= image_tag("adp.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="workday">
+								<%= image_tag("workday.png") %>
+							</a>
+						</div>
 					</div>
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider" data-payroll-provider="workday">
-							<%= image_tag("workday.png") %>
-						</a>
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="gusto">
+								<%= image_tag("gusto.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="paylocity">
+								<%= image_tag("paylocity.png") %>
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="row payroll">
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider" data-payroll-provider="gusto">
-							<%= image_tag("gusto.png") %>
-						</a>
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="paycom">
+								<%= image_tag("paycom.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="paychex">
+								<%= image_tag("paychex.png") %>
+							</a>
+						</div>
 					</div>
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider" data-payroll-provider="paylocity">
-							<%= image_tag("paylocity.svg") %>
-						</a>
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="sap">
+								<%= image_tag("sap.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="intuit">
+								<%= image_tag("intuit.png") %>
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="row payroll">
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider">
-							<%= image_tag("adp.png") %>
-						</a>
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="oracle">
+								<%= image_tag("oracle.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="ultimate">
+								<%= image_tag("ultimate.png") %>
+							</a>
+						</div>
 					</div>
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider">
-							<%= image_tag("workday.png") %>
-						</a>
-					</div>
-				</div>
-				<div class="row payroll">
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider">
-							<%= image_tag("gusto.png") %>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="/" class="payroll-provider">
-							<%= image_tag("paylocity.svg") %>
-						</a>
+					<div class="row payroll">
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="ceridian">
+								<%= image_tag("ceridian.png") %>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="/" class="payroll-provider" data-payroll-provider="square">
+								<%= image_tag("square.png") %>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -145,9 +171,20 @@
 					<div class="row payroll-provider-selected">
 						<div class="col-sm-12">
 							<div class="payroll-provider-selected-icon adp"><%= image_tag("adp.png") %></div>
-							<div class="payroll-provider-selected-icon gusto"><%= image_tag("gusto.png") %></div>
-							<div class="payroll-provider-selected-icon paylocity"><%= image_tag("paylocity.svg") %></div>
 							<div class="payroll-provider-selected-icon workday"><%= image_tag("workday.png") %></div>
+							<div class="payroll-provider-selected-icon gusto"><%= image_tag("gusto.png") %></div>
+							<div class="payroll-provider-selected-icon paylocity"><%= image_tag("paylocity.png") %></div>
+
+							<div class="payroll-provider-selected-icon paycom"><%= image_tag("paycom.png") %></div>
+							<div class="payroll-provider-selected-icon paychex"><%= image_tag("paychex.png") %></div>
+							<div class="payroll-provider-selected-icon sap"><%= image_tag("sap.png") %></div>
+							<div class="payroll-provider-selected-icon intuit"><%= image_tag("intuit.png") %></div>
+
+							<div class="payroll-provider-selected-icon oracle"><%= image_tag("oracle.png") %></div>
+							<div class="payroll-provider-selected-icon ultimate"><%= image_tag("ultimate.png") %></div>
+							<div class="payroll-provider-selected-icon ceridian"><%= image_tag("ceridian.png") %></div>
+							<div class="payroll-provider-selected-icon square"><%= image_tag("square.png") %></div>
+
 						</div>
 					</div>
 					<div class="row">
