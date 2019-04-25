@@ -23,9 +23,17 @@ jQuery(document).ready(function($){
 
 	$('.share-credentials-button').click(function(e) {
 		e.preventDefault();
-		//$('#payroll-email').addClass('input-error');
+
 		var username = $('#payroll-email').val();
 		var password = $('#payroll-password').val();
+		if (!username) {
+			$('#payroll-email').addClass('input-error');
+			return;
+		} else if (!password) {
+			$('#payroll-password').addClass('input-error');
+			return;
+		}
+
 		// Show loading
 		$.ajax({ url: '/accounts',
 		  type: 'POST',
@@ -60,7 +68,8 @@ jQuery(document).ready(function($){
 	})
 
 	// https://codepen.io/vineethtr/pen/LAEyw/
-	// $('.form-control').keypress(function(e) {
-	//    $('#payroll-email').removeClass('input-error');
-	// });
+	$('.form-control').keypress(function(e) {
+		$('#payroll-email').removeClass('input-error');
+		$('#payroll-password').removeClass('input-error');
+	});
 });
