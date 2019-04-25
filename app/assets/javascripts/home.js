@@ -3,6 +3,21 @@
 jQuery(document).ready(function($){
 	var provider;
 
+	var providerPreferences = {
+		"adp": {
+			identity: "Username"
+		},
+		"gusto": {
+			identity: "Email"
+		},
+		"paylocity": {
+			identity: "Email"
+		},
+		"workday": {
+			identity: "Username"
+		},
+	};
+
 	console.log('Ready');
 	$('.page2').hide();
 	$('.page3').hide();
@@ -17,6 +32,8 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		provider = $(this).data("payroll-provider");
 		console.log('Selected provider: ' + provider);
+		var identity = providerPreferences[provider]["identity"]
+		$('#payroll-email').attr('placeholder', identity);
 		$('.page2').hide();
 		$('.page3').show();
 	});
