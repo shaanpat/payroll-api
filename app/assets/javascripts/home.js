@@ -44,9 +44,21 @@ jQuery(document).ready(function($){
 	var allProviders = Object.keys(providerPreferences);
 
 	console.log('Ready');
-	$('.page2').hide();
-	$('.page3').hide();
-	$('.page4').hide();
+
+	function resetPages() {
+		$('.page1').show();
+		$('.page2').hide();
+		$('.page3').hide();
+		$('.page4').hide();
+	}
+
+	$('.block-button').click(function() {
+		resetPages();
+	});
+
+	$('.splash-button').click(function() {
+		resetPages();
+	});
 
 	$('.continue-button').click(function() {
 		$('.page1').hide();

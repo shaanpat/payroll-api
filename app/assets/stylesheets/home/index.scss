@@ -216,3 +216,30 @@
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
+
+.confirmation-headline {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.share-credentials-confirmation-image {
+	height: 200px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.confirmation-close-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 20px;
+}
