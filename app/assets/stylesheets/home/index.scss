@@ -51,6 +51,10 @@
 	padding: 15px 40px;
 }
 
+#getStartedModal .close-button {
+	float: right;
+}
+
 #getStartedModal .title {
 	font-size: 20px;
 	font-weight: 300;
@@ -84,4 +88,61 @@
 
 #getStartedModal .private-content {
 	margin-left: 5px;
+}
+
+.continue-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+#getStartedModal .payroll .col-sm-6 {
+	padding: 2px;
+}
+
+#getStartedModal .payroll img {
+	display: block;
+	height: 80px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 30px;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+.share-credentials-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+
+#getStartedModal .payroll-provider-selected img {
+	display: block;
+	max-height: 150px;
+	max-width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+
+#getStartedModal .payroll-provider-credentials input {
+	height: 50px;
+	font-size: 20px;
 }
