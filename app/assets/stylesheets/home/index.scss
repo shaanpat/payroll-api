@@ -54,7 +54,7 @@
 }
 
 #getStartedModal .page2-contents {
-	padding: 15px 20px;
+	padding: 15px 5px;
 }
 
 #getStartedModal .page3-contents {
@@ -121,8 +121,23 @@
 	border-radius: 4px;
 	margin-top: 20px;
 }
+
+#getStartedModal .payroll-provider-list {
+	height: 350px;
+	overflow-y: scroll;
+}
+
+#getStartedModal .payroll-provider-list::-webkit-scrollbar {
+	display: none;
+}
+
+#getStartedModal .payroll {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 #getStartedModal .payroll .col-sm-6 {
-	padding: 2px;
+	padding: 4px;
 }
 
 #getStartedModal .payroll img {
