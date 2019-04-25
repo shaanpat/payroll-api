@@ -39,6 +39,8 @@ jQuery(document).ready(function($){
 		// Change image displayed
 		$('.payroll-provider-selected-icon').hide();
 		$('.' + provider).show();
+		// Change style of page
+		$('.share-credentials-button').removeClass('adp gusto paylocity workday').addClass(provider);
 		// Transition to next page
 		$('.page2').hide();
 		$('.page3').show();

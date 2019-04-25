@@ -127,13 +127,28 @@
 	width: 100%;
 	border: none;
 	color: rgb(255, 255, 255);
-	background-color: rgb(94, 97, 249);
 	padding: 14px 28px;
 	font-size: 16px;
 	font-weight: 600;
 	cursor: pointer;
 	text-align: center;
 	border-radius: 4px;
+}
+
+.share-credentials-button.adp {
+	background-color: red;
+}
+
+.share-credentials-button.gusto {
+	background-color: red;
+}
+
+.share-credentials-button.paylocity {
+	background-color: orange;
+}
+
+.share-credentials-button.workday {
+	background-color: blue;
 }
 
 #getStartedModal .payroll-provider-selected img {
