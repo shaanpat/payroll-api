@@ -3,13 +3,35 @@ class AccountsController < ApplicationController
 		@account = Account.new
 	end
 
+	# https://www.justinweiss.com/articles/respond-to-without-all-the-pain/
 	def create
 	  @account = Account.new(account_params)
 	 
 	  if @account.save
-	    redirect_to '/confirmation'
+		respond_to do |format|
+		  format.json do
+		    render json: {
+		      provider: @account.provider,
+		      username: @account.username
+		    }.to_json
+		  end
+
+		  format.html do
+			redirect_to '/confirmation'
+		  end
+		end
 	  else
-	    render 'new'
+	  	respond_to do |format|
+	  		format.json do
+	  			render json: {
+	  				errors: @account.errors 
+	  			}.to_json
+	  		end
+
+	  		format.html do
+	  			render 'new'
+	  		end
+	  	end
 	  end
 	end
 
@@ -19,6 +41,6 @@ class AccountsController < ApplicationController
 
 	private
 	  def account_params
-	    params.require(:account).permit(:provider, :name, :username)
+	    params.require(:account).permit(:provider, :username)
 	  end
 end
