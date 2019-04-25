@@ -30,10 +30,16 @@ jQuery(document).ready(function($){
 
 	$('.payroll-provider').click(function(e) {
 		e.preventDefault();
+		// Lookup provider
 		provider = $(this).data("payroll-provider");
 		console.log('Selected provider: ' + provider);
+		// Change username/email input placeholder based on provider
 		var identity = providerPreferences[provider]["identity"]
 		$('#payroll-email').attr('placeholder', identity);
+		// Change image displayed
+		$('.payroll-provider-selected-icon').hide();
+		$('.' + provider).show();
+		// Transition to next page
 		$('.page2').hide();
 		$('.page3').show();
 	});
