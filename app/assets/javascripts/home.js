@@ -47,7 +47,13 @@ jQuery(document).ready(function($){
 		});
 	});
 
-	$('.arrow-left').click(function(e) {
+	$('.back-1').click(function(e) {
+		e.preventDefault();
+		$('.page2').hide();
+		$('.page1').show();
+	})
+
+	$('.back-2').click(function(e) {
 		e.preventDefault();
 		$('.page3').hide();
 		$('.page2').show();
