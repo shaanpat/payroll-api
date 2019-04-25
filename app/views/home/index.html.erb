@@ -34,136 +34,140 @@
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="page1">
-				<div class="row security">
-					<div class="col-sm-12">
-						<%= image_tag("security-icon.png") %>
+				<div class="page1-contents">
+					<div class="row security">
+						<div class="col-sm-12">
+							<%= image_tag("security-icon.png") %>
+						</div>
 					</div>
-				</div>
-				<br/>
-				<div class="row title">
-					<div class="col-sm-12">
-						Verix links to your payroll provider to collect all your tax forms
+					<br/>
+					<div class="row title">
+						<div class="col-sm-12">
+							Verix links to your payroll provider to collect all your tax forms
+						</div>
 					</div>
-				</div>
-				<br/>
-				<div class="row private">
-					<div class="col-sm-1">
-						<%= image_tag("check-icon.png") %>
+					<br/>
+					<div class="row private">
+						<div class="col-sm-1">
+							<%= image_tag("check-icon.png") %>
+						</div>
+						<div class="col-sm-10 private-content">
+							<div>Secure</div>
+							<div class="subtitle">Transfer of your information is encrypted end-to-end</div>
+						</div>
 					</div>
-					<div class="col-sm-10 private-content">
-						<div>Secure</div>
-						<div class="subtitle">Transfer of your information is encrypted end-to-end</div>
+					<br/>
+					<div class="row private">
+						<div class="col-sm-1">
+							<%= image_tag("check-icon.png") %>
+						</div>
+						<div class="col-sm-10 private-content">
+							<div>Private</div>
+							<div class="subtitle">Your credentials will never be accessible to Verix</div>
+						</div>
 					</div>
-				</div>
-				<br/>
-				<div class="row private">
-					<div class="col-sm-1">
-						<%= image_tag("check-icon.png") %>
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="button" class="continue-button">Continue</button>
+						</div>
 					</div>
-					<div class="col-sm-10 private-content">
-						<div>Private</div>
-						<div class="subtitle">Your credentials will never be accessible to Verix</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<button type="button" class="continue-button">Continue</button>
-					</div>
-				</div>
-				<br/>
-				<div class="row legal">
-					<div class="col-sm-12">
-						By selecting "Continue" you agree to Verix's Privacy Policy.
+					<br/>
+					<div class="row legal">
+						<div class="col-sm-12">
+							By selecting "Continue" you agree to Verix's Privacy Policy.
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="page2">
 				<a href="/" class="arrow-left back-1"></a>
-				<div class="row title">
-					<div class="col-sm-12">
-						Select Your Payroll Provider
-					</div>
-				</div>
-				<br/>
-				<div class="payroll-provider-list">
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="adp">
-								<%= image_tag("adp.png") %>
-							</a>
-						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="workday">
-								<%= image_tag("workday.png") %>
-							</a>
+				<div class="page2-contents">
+					<div class="row title">
+						<div class="col-sm-12">
+							Select Your Payroll Provider
 						</div>
 					</div>
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="gusto">
-								<%= image_tag("gusto.png") %>
-							</a>
+					<br/>
+					<div class="payroll-provider-list">
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="adp">
+									<%= image_tag("adp.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="workday">
+									<%= image_tag("workday.png") %>
+								</a>
+							</div>
 						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="paylocity">
-								<%= image_tag("paylocity.png") %>
-							</a>
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="gusto">
+									<%= image_tag("gusto.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="paylocity">
+									<%= image_tag("paylocity.png") %>
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="paycom">
-								<%= image_tag("paycom.png") %>
-							</a>
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="paycom">
+									<%= image_tag("paycom.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="paychex">
+									<%= image_tag("paychex.png") %>
+								</a>
+							</div>
 						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="paychex">
-								<%= image_tag("paychex.png") %>
-							</a>
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="sap">
+									<%= image_tag("sap.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="intuit">
+									<%= image_tag("intuit.png") %>
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="sap">
-								<%= image_tag("sap.png") %>
-							</a>
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="oracle">
+									<%= image_tag("oracle.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="ultimate">
+									<%= image_tag("ultimate.png") %>
+								</a>
+							</div>
 						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="intuit">
-								<%= image_tag("intuit.png") %>
-							</a>
-						</div>
-					</div>
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="oracle">
-								<%= image_tag("oracle.png") %>
-							</a>
-						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="ultimate">
-								<%= image_tag("ultimate.png") %>
-							</a>
-						</div>
-					</div>
-					<div class="row payroll">
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="ceridian">
-								<%= image_tag("ceridian.png") %>
-							</a>
-						</div>
-						<div class="col-sm-6">
-							<a href="/" class="payroll-provider" data-payroll-provider="square">
-								<%= image_tag("square.png") %>
-							</a>
+						<div class="row payroll">
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="ceridian">
+									<%= image_tag("ceridian.png") %>
+								</a>
+							</div>
+							<div class="col-sm-6">
+								<a href="/" class="payroll-provider" data-payroll-provider="square">
+									<%= image_tag("square.png") %>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="page3">
-				<div>
-					<a href="/" class="arrow-left back-2"></a>
+				<a href="/" class="arrow-left back-2"></a>
+				<div class="page3-contents">
 					<div class="row title">
 						<div class="col-sm-12 title">
 							Enter your credentials
@@ -202,17 +206,19 @@
 							</form>
 						</div>
 					</div>
-			    </div>
+				</div>
 			</div>
 			<div class="page4">
-				<div class="row">
-					<div class="col-sm-12 confirmation">
-						<h3 class="confirmation-headline">That's all, thank you!</h3>
-						<%= image_tag("high-standards.svg", class: "share-credentials-confirmation-image") %>
-						<p>
-							Your registration is complete. We'll reachout to you shortly with all your tax forms.
-						</p>
-						<button type="button" class="btn btn-default confirmation-close-button" data-dismiss="modal">Close</button>
+				<div class="page4-contents">
+					<div class="row">
+						<div class="col-sm-12 confirmation">
+							<h3 class="confirmation-headline">That's all, thank you!</h3>
+							<%= image_tag("high-standards.svg", class: "share-credentials-confirmation-image") %>
+							<p>
+								Your registration is complete. We'll reachout to you shortly with all your tax forms.
+							</p>
+							<button type="button" class="btn btn-default confirmation-close-button" data-dismiss="modal">Close</button>
+						</div>
 					</div>
 				</div>
 			</div>

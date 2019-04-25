@@ -44,9 +44,25 @@
 }
 
 #getStartedModal .modal-content {
-	padding: 15px 40px;
+	padding: 15px;
 	width: 400px;
 	height: 500px;
+}
+
+#getStartedModal .page1-contents {
+	padding: 15px 40px;
+}
+
+#getStartedModal .page2-contents {
+	padding: 15px 20px;
+}
+
+#getStartedModal .page3-contents {
+	padding: 15px 40px;
+}
+
+#getStartedModal .page4-contents {
+	padding: 15px 40px;
 }
 
 #getStartedModal .close-button {
@@ -67,8 +83,8 @@
 
 #getStartedModal .security img {
 	display: block;
-	max-height: 75px;
-	max-width: 50px;
+	max-height: 100px;
+	max-width: 70px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
