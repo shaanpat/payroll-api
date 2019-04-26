@@ -1,0 +1,36 @@
+#signup-modal .select-provider-page-contents {
+	padding: 15px 5px;
+}
+
+#signup-modal .payroll-provider-list {
+	height: 335px;
+	overflow-y: scroll;
+}
+
+#signup-modal .payroll-provider-list::-webkit-scrollbar {
+	display: none;
+}
+
+#signup-modal .payroll {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#signup-modal .payroll .col-sm-6 {
+	padding: 4px;
+}
+
+#signup-modal .payroll img {
+	display: block;
+	height: 80px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px 30px;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+#signup-modal .payroll img:hover {
+	border: 1.5px solid #999;
+}

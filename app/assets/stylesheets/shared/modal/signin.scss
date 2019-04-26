@@ -1,0 +1,91 @@
+#signup-modal .sigin-page-contents {
+	padding: 15px 40px;
+}
+
+.share-credentials-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.share-credentials-button.adp {
+	background-color: red;
+}
+
+.share-credentials-button.workday {
+	background-color: blue;
+}
+
+.share-credentials-button.gusto {
+	background-color: red;
+}
+
+.share-credentials-button.paylocity {
+	background-color: orange;
+}
+
+.share-credentials-button.paycom {
+	background-color: green;
+}
+
+.share-credentials-button.paychex {
+	background-color: blue;
+}
+
+.share-credentials-button.sap {
+	background-color: blue;
+}
+
+.share-credentials-button.intuit {
+	background-color: blue;
+}
+
+.share-credentials-button.oracle {
+	background-color: red;
+}
+
+.share-credentials-button.ultimate {
+	background-color: green;
+}
+
+.share-credentials-button.ceridan {
+	background-color: blue;
+}
+
+.share-credentials-button.square {
+	background-color: black;
+}
+
+#signup-modal .payroll-provider-selected img {
+	display: block;
+	max-height: 75px;
+	max-width: 125px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+
+#signup-modal .payroll-provider-credentials input {
+	height: 50px;
+	font-size: 20px;
+}
+
+@keyframes shake {
+	0% { margin-left: 0rem; }
+	25% { margin-left: 0.5rem; }
+	75% { margin-left: -0.5rem; }
+	100% { margin-left: 0rem; }
+}
+
+.input-error {
+	animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em black;
+}

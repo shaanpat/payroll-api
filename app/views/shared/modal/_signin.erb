@@ -1,0 +1,40 @@
+<div class="signin-page">
+	<a href="/" class="arrow-left back-to-provider"></a>
+	<div class="signin-page-contents">
+		<div class="row title">
+			<div class="col-sm-12 title">
+				Enter your credentials
+			</div>
+		</div>
+		<div class="row payroll-provider-selected">
+			<div class="col-sm-12">
+				<div class="payroll-provider-selected-icon adp"><%= image_tag("adp.png") %></div>
+				<div class="payroll-provider-selected-icon workday"><%= image_tag("workday.png") %></div>
+				<div class="payroll-provider-selected-icon gusto"><%= image_tag("gusto.png") %></div>
+				<div class="payroll-provider-selected-icon paylocity"><%= image_tag("paylocity.png") %></div>
+				<div class="payroll-provider-selected-icon paycom"><%= image_tag("paycom.png") %></div>
+				<div class="payroll-provider-selected-icon paychex"><%= image_tag("paychex.png") %></div>
+				<div class="payroll-provider-selected-icon sap"><%= image_tag("sap.png") %></div>
+				<div class="payroll-provider-selected-icon intuit"><%= image_tag("intuit.png") %></div>
+				<div class="payroll-provider-selected-icon oracle"><%= image_tag("oracle.png") %></div>
+				<div class="payroll-provider-selected-icon ultimate"><%= image_tag("ultimate.png") %></div>
+				<div class="payroll-provider-selected-icon ceridian"><%= image_tag("ceridian.png") %></div>
+				<div class="payroll-provider-selected-icon square"><%= image_tag("square.png") %></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 payroll-provider-credentials">
+				<form>
+				  <%= csrf_meta_tag %>
+				  <div class="form-group">
+				  	<input type="email" class="form-control" id="payroll-email"placeholder="Email">
+				  </div>
+				  <div class="form-group">
+				  	<input type="password" class="form-control" id="payroll-password" placeholder="Password">
+				  </div>
+				  <button type="submit" class="share-credentials-button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

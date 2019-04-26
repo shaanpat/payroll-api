@@ -4,6 +4,12 @@
 @import "shared/general";
 @import "shared/header";
 
+@import "shared/modal/general";
+@import "shared/modal/security";
+@import "shared/modal/select_provider";
+@import "shared/modal/signin";
+@import "shared/modal/confirmation";
+
 @import "home/about";
 @import "home/faq";
 @import "home/index";

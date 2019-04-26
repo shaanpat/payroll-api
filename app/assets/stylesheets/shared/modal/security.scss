@@ -1,0 +1,56 @@
+#signup-modal .security-page-contents {
+	padding: 15px 40px;
+}
+
+#signup-modal .title {
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+}
+
+#signup-modal .legal {
+	font-size: 10px;
+	color: #999;
+	text-align: center;
+}
+
+#signup-modal .security img {
+	display: block;
+	max-height: 100px;
+	max-width: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#signup-modal .private img {
+	display: block;
+	max-height: 25px;
+	max-width: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#signup-modal .private .subtitle {
+	color: #999;
+}
+
+#signup-modal .private-content {
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+.continue-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 20px;
+}

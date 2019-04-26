@@ -1,55 +1,29 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 jQuery(document).ready(function($){
-	var provider;
+	var selectedProvider;
 
+	// CONSTANTS
 	var providerPreferences = {
-		"adp": {
-			identity: "Username"
-		},
-		"workday": {
-			identity: "Email"
-		},
-		"gusto": {
-			identity: "Email"
-		},
-		"paylocity": {
-			identity: "Username"
-		},
-		"paycom": {
-			identity: "Username"
-		},
-		"paychex": {
-			identity: "Email"
-		},
-		"sap": {
-			identity: "Email"
-		},
-		"intuit": {
-			identity: "Username"
-		},
-		"oracle": {
-			identity: "Username"
-		},
-		"ultimate": {
-			identity: "Email"
-		},
-		"ceridian": {
-			identity: "Email"
-		},
-		"square": {
-			identity: "Username"
-		},
+		"adp": { identity: "Username" },
+		"workday": { identity: "Email" },
+		"gusto": { identity: "Email" },
+		"paylocity": { identity: "Username" },
+		"paycom": { identity: "Username" },
+		"paychex": { identity: "Email" },
+		"sap": { identity: "Email" },
+		"intuit": { identity: "Username" },
+		"oracle": { identity: "Username" },
+		"ultimate": { identity: "Email" },
+		"ceridian": { identity: "Email" },
+		"square": { identity: "Username" },
 	};
 	var allProviders = Object.keys(providerPreferences);
 
-	console.log('Ready');
-
+	// LAUNCH
 	function resetPages() {
-		$('.page1').show();
-		$('.page2').hide();
-		$('.page3').hide();
-		$('.page4').hide();
+		$('.security-page').show();
+		$('.select-provider-page').hide();
+		$('.signin-page').hide();
+		$('.confirmation-page').hide();
 	}
 
 	$('.block-button').click(function() {
@@ -60,34 +34,37 @@ jQuery(document).ready(function($){
 		resetPages();
 	});
 
+	// TRANSITIONS
 	$('.continue-button').click(function() {
-		$('.page1').hide();
-		$('.page2').show();
+		$('.security-page').hide();
+		$('.select-provider-page').show();
 	});
 
 	$('.payroll-provider').click(function(e) {
 		e.preventDefault();
 		// Lookup provider
-		provider = $(this).data("payroll-provider");
-		console.log('Selected provider: ' + provider);
+		selectedProvider = $(this).data("payroll-provider");
+		console.log('Selected provider: ' + selectedProvider);
 		// Change username/email input placeholder based on provider
-		var identity = providerPreferences[provider]["identity"]
+		var identity = providerPreferences[selectedProvider]["identity"]
 		$('#payroll-email').attr('placeholder', identity);
 		// Change image displayed
 		$('.payroll-provider-selected-icon').hide();
-		$('.' + provider).show();
+		$('.' + selectedProvider).show();
 		// Change style of page
-		$('.share-credentials-button').removeClass(allProviders.join(' ')).addClass(provider);
+		$('.share-credentials-button').removeClass(allProviders.join(' ')).addClass(selectedProvider);
 		// Transition to next page
-		$('.page2').hide();
-		$('.page3').show();
+		$('.select-provider-page').hide();
+		$('.signin-page').show();
 	});
 
 	$('.share-credentials-button').click(function(e) {
 		e.preventDefault();
 
+		// Lookup username & password
 		var username = $('#payroll-email').val();
 		var password = $('#payroll-password').val();
+		// Verify a username & password were entered
 		if (!username) {
 			$('#payroll-email').addClass('input-error');
 			return;
@@ -96,42 +73,41 @@ jQuery(document).ready(function($){
 			return;
 		}
 
-		// Show loading
+		// Submit data to servers
+		// TODO: Show loading
 		$.ajax({ url: '/accounts',
 		  type: 'POST',
 		  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-		  data: {account: {username: username, provider: provider}},
+		  data: {account: {username: username, provider: selectedProvider}},
 		  success: function(data, status, jqXHR) {
 		    console.log(data);
-		    // TODO:
-		    // Stop loading
-		    $('.page3').hide();
-			$('.page4').show();
+		    // TODO: Stop loading
+		    $('.signin-page').hide();
+			$('.confirmation-page').show();
 		  },
 		  error: function(jqXHR, status, err) {
-			// TODO:
-			// Stop loading
-			// Display the error
+			// TODO: Stop loading
+			// TODO: Display the error
 			console.log(err);
 		  }
 		});
 	});
 
-	$('.back-1').click(function(e) {
-		e.preventDefault();
-		$('.page2').hide();
-		$('.page1').show();
-	})
-
-	$('.back-2').click(function(e) {
-		e.preventDefault();
-		$('.page3').hide();
-		$('.page2').show();
-	})
-
-	// https://codepen.io/vineethtr/pen/LAEyw/
+	// Remove error message once the user starts typing again
 	$('.form-control').keypress(function(e) {
 		$('#payroll-email').removeClass('input-error');
 		$('#payroll-password').removeClass('input-error');
 	});
+
+	$('.back-to-security').click(function(e) {
+		e.preventDefault();
+		$('.select-provider-page').hide();
+		$('.security-page').show();
+	})
+
+	$('.back-to-provider').click(function(e) {
+		e.preventDefault();
+		$('.signin-page').hide();
+		$('.select-provider-page').show();
+	})
 });
