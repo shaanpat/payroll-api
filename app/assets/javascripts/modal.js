@@ -23,6 +23,7 @@ $(document).on('turbolinks:load', function() {
 		$('.security-page').show();
 		$('.select-provider-page').hide();
 		$('.signin-page').hide();
+		$('.signin-other-page').hide();
 		$('.confirmation-page').hide();
 	}
 
@@ -91,7 +92,51 @@ $(document).on('turbolinks:load', function() {
 		  	}
 		  },
 		  error: function(jqXHR, status, err) {
-			// TODO: Stop loading
+			// TODO: Display the error
+			console.log(err);
+		  }
+		});
+	});
+
+	$('.share-other-credentials-button').click(function(e) {
+		e.preventDefault();
+
+		// Lookup username & password
+		var provider = $('#other-payroll-provider').val();
+		var username = $('#other-payroll-email').val();
+		var password = $('#other-payroll-password').val();
+		// Verify a username & password were entered
+		if (!provider) {
+			$('#other-payroll-provider').addClass('input-error');
+			return;
+		} else if (!username) {
+			$('#other-payroll-email').addClass('input-error');
+			return;
+		} else if (!password) {
+			$('#other-payroll-password').addClass('input-error');
+			return;
+		}
+
+		// Submit data to servers
+		$.ajax({ url: '/accounts',
+		  type: 'POST',
+		  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+		  data: {account: {username: username, provider: provider}},
+		  success: function(data, status, jqXHR) {
+		  	if (data.errors) {
+		  		if (data.errors.provider) {
+		  			$('#other-payroll-provider').addClass('input-error');
+		  		} else if (data.errors.username) {
+		  			$('#other-payroll-email').addClass('input-error');
+		  		} else if (data.errors.password) {
+		  			$('#other-payroll-password').addClass('input-error');
+		  		}
+		  	} else {
+		  		$('.signin-other-page').hide();
+		  		$('.confirmation-page').show();
+		  	}
+		  },
+		  error: function(jqXHR, status, err) {
 			// TODO: Display the error
 			console.log(err);
 		  }
@@ -108,11 +153,23 @@ $(document).on('turbolinks:load', function() {
 		e.preventDefault();
 		$('.select-provider-page').hide();
 		$('.security-page').show();
-	})
+	});
 
 	$('.back-to-provider').click(function(e) {
 		e.preventDefault();
 		$('.signin-page').hide();
 		$('.select-provider-page').show();
-	})
+	});
+
+	$('.back-to-provider-other').click(function(e) {
+		e.preventDefault();
+		$('.signin-other-page').hide();
+		$('.select-provider-page').show();
+	});
+
+	$('.select-other-payroll-provider').click(function(e) {
+		e.preventDefault();
+		$('.select-provider-page').hide();
+		$('.signin-other-page').show();
+	});
 });

@@ -34,3 +34,19 @@
 #signup-modal .payroll img:hover {
 	border: 1.5px solid #999;
 }
+
+#signup-modal .other-payroll-provider {
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+
+#signup-modal .select-other-payroll-provider {	
+	color: black;
+}
+
+#signup-modal .select-other-payroll-provider:hover {
+	cursor: pointer;
+	text-decoration: none;
+	color: #999;
+}
