@@ -74,16 +74,21 @@ $(document).on('turbolinks:load', function() {
 		}
 
 		// Submit data to servers
-		// TODO: Show loading
 		$.ajax({ url: '/accounts',
 		  type: 'POST',
 		  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 		  data: {account: {username: username, provider: selectedProvider}},
 		  success: function(data, status, jqXHR) {
-		    console.log(data);
-		    // TODO: Stop loading
-		    $('.signin-page').hide();
-			$('.confirmation-page').show();
+		  	if (data.errors) {
+		  		if (data.errors.username) {
+		  			$('#payroll-email').addClass('input-error');
+		  		} else if (data.errors.password) {
+		  			$('#payroll-password').addClass('input-error');
+		  		}
+		  	} else {
+		  		$('.signin-page').hide();
+		  		$('.confirmation-page').show();
+		  	}
 		  },
 		  error: function(jqXHR, status, err) {
 			// TODO: Stop loading
