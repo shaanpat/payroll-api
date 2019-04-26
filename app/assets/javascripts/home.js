@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+$(document).on('turbolinks:load', function() {
 	var selectedProvider;
 
 	// CONSTANTS
