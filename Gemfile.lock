@@ -110,6 +110,7 @@ GEM
     msgpack (1.2.9)
     multi_json (1.13.1)
     mysql2 (0.5.2)
+    newrelic_rpm (6.2.0.354)
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
+  newrelic_rpm
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
