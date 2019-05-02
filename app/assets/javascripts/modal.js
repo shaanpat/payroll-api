@@ -14,7 +14,11 @@ $(document).on('turbolinks:load', function() {
 		"oracle": { identity: "Username" },
 		"ultimate": { identity: "Email" },
 		"ceridian": { identity: "Email" },
-		"square": { identity: "Username" },
+		"trinet": { identity: "Username" },
+		"kronos": { identity: "Username" },
+		"sure-payroll": { identity: "Email" },
+		"namely": { identity: "Email" },
+		"justworks": { identity: "Username" },
 	};
 	var allProviders = Object.keys(providerPreferences);
 
