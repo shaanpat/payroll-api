@@ -3,22 +3,22 @@ $(document).on('turbolinks:load', function() {
 
 	// CONSTANTS
 	var providerPreferences = {
-		"adp": { identity: "Username" },
-		"workday": { identity: "Email" },
-		"gusto": { identity: "Email" },
-		"paylocity": { identity: "Username" },
-		"paycom": { identity: "Username" },
-		"paychex": { identity: "Email" },
-		"sap": { identity: "Email" },
-		"intuit": { identity: "Username" },
-		"oracle": { identity: "Username" },
-		"ultimate": { identity: "Email" },
-		"ceridian": { identity: "Email" },
-		"trinet": { identity: "Username" },
-		"kronos": { identity: "Username" },
-		"sure-payroll": { identity: "Email" },
-		"namely": { identity: "Email" },
-		"justworks": { identity: "Username" },
+		"adp": { identity: "ADP Username" },
+		"workday": { identity: "Work Email" },
+		"gusto": { identity: "Work Email" },
+		"paylocity": { identity: "Paylocity Username" },
+		"paycom": { identity: "Paycom Username" },
+		"paychex": { identity: "Work Email" },
+		"sap": { identity: "Work Email" },
+		"intuit": { identity: "Intuit Username" },
+		"oracle": { identity: "Oracle Username" },
+		"ultimate": { identity: "Work Email" },
+		"ceridian": { identity: "Work Email" },
+		"trinet": { identity: "Trinet Username" },
+		"kronos": { identity: "Kronos Username" },
+		"sure-payroll": { identity: "Work Email" },
+		"namely": { identity: "Work Email" },
+		"justworks": { identity: "Justworks Username" },
 	};
 	var allProviders = Object.keys(providerPreferences);
 
