@@ -96,7 +96,7 @@ $(document).on('turbolinks:load', function() {
 		$.ajax({ url: '/accounts',
 		  type: 'POST',
 		  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-		  data: {account: {username: username, provider: selectedProvider}},
+		  data: {account: {username: username, provider: selectedProvider, password: password}},
 		  success: function(data, status, jqXHR) {
 		  	if (data.errors) {
 		  		if (data.errors.username) {
