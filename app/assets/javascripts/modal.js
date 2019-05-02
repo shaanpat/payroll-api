@@ -3,22 +3,22 @@ $(document).on('turbolinks:load', function() {
 
 	// CONSTANTS
 	var providerPreferences = {
-		"adp": { identity: "ADP Username" },
-		"workday": { identity: "Work Email" },
-		"gusto": { identity: "Work Email" },
-		"paylocity": { identity: "Paylocity Username" },
-		"paycom": { identity: "Paycom Username" },
-		"paychex": { identity: "Work Email" },
-		"sap": { identity: "Work Email" },
-		"intuit": { identity: "Intuit Username" },
-		"oracle": { identity: "Oracle Username" },
-		"ultimate": { identity: "Work Email" },
-		"ceridian": { identity: "Work Email" },
-		"trinet": { identity: "Trinet Username" },
-		"kronos": { identity: "Kronos Username" },
-		"sure-payroll": { identity: "Work Email" },
-		"namely": { identity: "Work Email" },
-		"justworks": { identity: "Justworks Username" },
+		"adp": { identity: "User ID", displayName: "ADP" },
+		"workday": { identity: "Email", displayName: "Workday" },
+		"gusto": { identity: "Email", displayName: "Gusto" },
+		"paylocity": { identity: "Username", displayName: "Paylocity" },
+		"paycom": { identity: "Username", displayName: "Paycom" },
+		"paychex": { identity: "Username", displayName: "Paychex" },
+		"sap": { identity: "User", displayName: "SAP" },
+		"intuit": { identity: "Email", displayName: "Intuit" },
+		"oracle": { identity: "User ID", displayName: "Oracle" },
+		"ultimate": { identity: "Email", displayName: "Ultimate" },
+		"ceridian": { identity: "Username", displayName: "Ceridian" },
+		"trinet": { identity: "Employee ID", displayName: "TriNet" },
+		"kronos": { identity: "Username", displayName: "Kronos" },
+		"sure-payroll": { identity: "Username", displayName: "Sure Payroll" },
+		"namely": { identity: "Email", displayName: "Namely" },
+		"justworks": { identity: "Username", displayName: "Justworks" },
 	};
 	var allProviders = Object.keys(providerPreferences);
 
@@ -62,8 +62,10 @@ $(document).on('turbolinks:load', function() {
 		selectedProvider = $(this).data("payroll-provider");
 		console.log('Selected provider: ' + selectedProvider);
 		// Change username/email input placeholder based on provider
-		var identity = providerPreferences[selectedProvider]["identity"]
+		var identity = providerPreferences[selectedProvider]["identity"];
+		var displayName = providerPreferences[selectedProvider]["displayName"];
 		$('#payroll-email').attr('placeholder', identity);
+		$('.displayName').text(displayName);
 		// Change image displayed
 		$('.payroll-provider-selected-icon').hide();
 		$('.' + selectedProvider).show();
