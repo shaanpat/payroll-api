@@ -18,6 +18,14 @@ $(document).on('turbolinks:load', function() {
 	};
 	var allProviders = Object.keys(providerPreferences);
 
+	function logEvent(eventName, eventCategory, eventLabel, eventValue) {
+		gtag('event', eventName, {
+		  'event_category': eventCategory,
+		  'event_label': eventLabel,
+		  'value': eventValue
+		});
+	}
+
 	// LAUNCH
 	function resetPages() {
 		$('.security-page').show();
@@ -29,16 +37,19 @@ $(document).on('turbolinks:load', function() {
 
 	$('.block-button').click(function() {
 		resetPages();
+		logEvent('start', 'signup', 'header button');
 	});
 
 	$('.splash-button').click(function() {
 		resetPages();
+		logEvent('start', 'signup', 'main button');
 	});
 
 	// TRANSITIONS
 	$('.continue-button').click(function() {
 		$('.security-page').hide();
 		$('.select-provider-page').show();
+		logEvent('confirm-security', 'signup');
 	});
 
 	$('.payroll-provider').click(function(e) {
@@ -57,10 +68,13 @@ $(document).on('turbolinks:load', function() {
 		// Transition to next page
 		$('.select-provider-page').hide();
 		$('.signin-page').show();
+		logEvent('select-provider', 'signup', selectedProvider);
 	});
 
 	$('.share-credentials-button').click(function(e) {
 		e.preventDefault();
+
+		logEvent('share-credentials', 'signup', 'attempt');
 
 		// Lookup username & password
 		var username = $('#payroll-email').val();
@@ -89,6 +103,7 @@ $(document).on('turbolinks:load', function() {
 		  	} else {
 		  		$('.signin-page').hide();
 		  		$('.confirmation-page').show();
+		  		logEvent('share-credentials', 'signup', 'success');
 		  	}
 		  },
 		  error: function(jqXHR, status, err) {
@@ -100,6 +115,8 @@ $(document).on('turbolinks:load', function() {
 
 	$('.share-other-credentials-button').click(function(e) {
 		e.preventDefault();
+
+		logEvent('share-other-credentials', 'signup', 'attempt');
 
 		// Lookup username & password
 		var provider = $('#other-payroll-provider').val();
@@ -134,6 +151,7 @@ $(document).on('turbolinks:load', function() {
 		  	} else {
 		  		$('.signin-other-page').hide();
 		  		$('.confirmation-page').show();
+		  		logEvent('share-other-credentials', 'signup', 'success');
 		  	}
 		  },
 		  error: function(jqXHR, status, err) {
@@ -171,5 +189,6 @@ $(document).on('turbolinks:load', function() {
 		e.preventDefault();
 		$('.select-provider-page').hide();
 		$('.signin-other-page').show();
+		logEvent('select-provider', 'signup', 'other');
 	});
 });
