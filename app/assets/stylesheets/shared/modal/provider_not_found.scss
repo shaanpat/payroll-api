@@ -1,0 +1,35 @@
+#signup-modal .provider-not-found-page-contents {
+	padding: 15px 40px;
+}
+
+.provider-not-found-headline {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.provider-not-found-image {
+	height: 200px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.provider-not-found {
+	text-align: center;
+}
+
+.provider-not-found-close-button {
+	display: block;
+	width: 100%;
+	border: none;
+	color: rgb(255, 255, 255);
+	background-color: rgb(94, 97, 249);
+	padding: 14px 28px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+	margin-top: 20px;
+}

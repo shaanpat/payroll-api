@@ -3,7 +3,7 @@
 }
 
 #signup-modal .payroll-provider-list {
-	height: 335px;
+	height: 310px;
 	overflow-y: scroll;
 }
 
@@ -43,9 +43,27 @@
 
 #signup-modal .select-other-payroll-provider {	
 	color: black;
+	font-size: 14px;
 }
 
 #signup-modal .select-other-payroll-provider:hover {
+	cursor: pointer;
+	text-decoration: none;
+	color: #999;
+}
+
+#signup-modal .find-my-payroll-provider {
+	text-align: center;
+	display: block;
+	margin-top: 20px;
+}
+
+#signup-modal .select-find-my-payroll-provider {
+	color: black;
+	font-size: 14px;
+}
+
+#signup-modal .select-find-my-payroll-provider:hover {
 	cursor: pointer;
 	text-decoration: none;
 	color: #999;

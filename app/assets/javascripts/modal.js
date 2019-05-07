@@ -37,7 +37,9 @@ $(document).on('turbolinks:load', function() {
 		$('.select-provider-page').hide();
 		$('.signin-page').hide();
 		$('.signin-other-page').hide();
+		$('.find-provider-page').hide();
 		$('.confirmation-page').hide();
+		$('.provider-not-found-page').hide();
 		currentPage = 'security';
 	}
 
@@ -179,10 +181,40 @@ $(document).on('turbolinks:load', function() {
 		});
 	}
 
+	$('.lookup-provider-button').click(function(e) {
+		e.preventDefault();
+		lookupPayrollProvider();
+	});
+
+	function lookupPayrollProvider() {
+		logEvent('lookup-provider', 'signup', 'attempt');
+
+		var workEmail = $('#work-email').val();
+		// Verify an email was entered
+		if (!workEmail) {
+			$('#work-email').addClass('input-error');
+			return;
+		}
+
+		// TODO: We could make API call to save the work email
+
+		$('.find-provider-page').hide();
+		$('.provider-not-found-page').show();
+		currentPage = 'provider-not-found';
+
+		logEvent('lookup-provider', 'signup', 'success');
+	}
+
 	// Remove error message once the user starts typing again
 	$('.form-control').keypress(function(e) {
 		$('#payroll-email').removeClass('input-error');
 		$('#payroll-password').removeClass('input-error');
+
+		$('#other-payroll-provider').removeClass('input-error');
+		$('#other-payroll-email').removeClass('input-error');
+		$('#other-payroll-password').removeClass('input-error');
+
+		$('#work-email').removeClass('input-error');
 	});
 
 	$(document).on('keypress',function(e) {
@@ -191,6 +223,8 @@ $(document).on('turbolinks:load', function() {
 	    		shareCredentials();
 	    	} else if (currentPage == 'signin-other') {
 	    		shareOtherCredentials();
+	    	} else if (currentPage == 'find-provider') {
+	    		lookupPayrollProvider();
 	    	}
 	    }
 	});
@@ -216,6 +250,13 @@ $(document).on('turbolinks:load', function() {
 		currentPage = 'select-provider';
 	});
 
+	$('.back-to-provider-find').click(function(e) {
+		e.preventDefault();
+		$('.find-provider-page').hide();
+		$('.select-provider-page').show();
+		currentPage = 'select-provider';
+	});
+
 	$('.select-other-payroll-provider').click(function(e) {
 		e.preventDefault();
 		$('.select-provider-page').hide();
@@ -223,4 +264,12 @@ $(document).on('turbolinks:load', function() {
 		currentPage = 'signin-other';
 		logEvent('select-provider', 'signup', 'other');
 	});
+
+	$('.find-my-payroll-provider').click(function(e) {
+		e.preventDefault();
+		$('.select-provider-page').hide();
+		$('.find-provider-page').show();
+		currentPage = 'find-provider';
+		logEvent('find-provider', 'signup');
+	});	
 });
