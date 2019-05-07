@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+	var currentPage;
 	var selectedProvider;
 
 	// CONSTANTS
@@ -37,6 +38,7 @@ $(document).on('turbolinks:load', function() {
 		$('.signin-page').hide();
 		$('.signin-other-page').hide();
 		$('.confirmation-page').hide();
+		currentPage = 'security';
 	}
 
 	$('.block-button').click(function() {
@@ -53,6 +55,7 @@ $(document).on('turbolinks:load', function() {
 	$('.continue-button').click(function() {
 		$('.security-page').hide();
 		$('.select-provider-page').show();
+		currentPage = 'select-provider';
 		logEvent('confirm-security', 'signup');
 	});
 
@@ -74,12 +77,16 @@ $(document).on('turbolinks:load', function() {
 		// Transition to next page
 		$('.select-provider-page').hide();
 		$('.signin-page').show();
+		currentPage = 'signin';
 		logEvent('select-provider', 'signup', selectedProvider);
 	});
 
 	$('.share-credentials-button').click(function(e) {
 		e.preventDefault();
+		shareCredentials();
+	});
 
+	function shareCredentials() {
 		logEvent('share-credentials', 'signup', 'attempt');
 
 		// Lookup username & password
@@ -109,6 +116,7 @@ $(document).on('turbolinks:load', function() {
 		  	} else {
 		  		$('.signin-page').hide();
 		  		$('.confirmation-page').show();
+		  		currentPage = 'confirmation';
 		  		logEvent('share-credentials', 'signup', 'success');
 		  	}
 		  },
@@ -117,11 +125,14 @@ $(document).on('turbolinks:load', function() {
 			console.log(err);
 		  }
 		});
-	});
+	}
 
 	$('.share-other-credentials-button').click(function(e) {
 		e.preventDefault();
+		shareOtherCredentials();
+	});	
 
+	function shareOtherCredentials() {
 		logEvent('share-other-credentials', 'signup', 'attempt');
 
 		// Lookup username & password
@@ -157,6 +168,7 @@ $(document).on('turbolinks:load', function() {
 		  	} else {
 		  		$('.signin-other-page').hide();
 		  		$('.confirmation-page').show();
+		  		currentPage = 'confirmation';
 		  		logEvent('share-other-credentials', 'signup', 'success');
 		  	}
 		  },
@@ -165,7 +177,7 @@ $(document).on('turbolinks:load', function() {
 			console.log(err);
 		  }
 		});
-	});
+	}
 
 	// Remove error message once the user starts typing again
 	$('.form-control').keypress(function(e) {
@@ -173,28 +185,42 @@ $(document).on('turbolinks:load', function() {
 		$('#payroll-password').removeClass('input-error');
 	});
 
+	$(document).on('keypress',function(e) {
+	    if(e.which == 13) {
+	    	if (currentPage == 'signin') {
+	    		shareCredentials();
+	    	} else if (currentPage == 'signin-other') {
+	    		shareOtherCredentials();
+	    	}
+	    }
+	});
+
 	$('.back-to-security').click(function(e) {
 		e.preventDefault();
 		$('.select-provider-page').hide();
 		$('.security-page').show();
+		currentPage = 'security';
 	});
 
 	$('.back-to-provider').click(function(e) {
 		e.preventDefault();
 		$('.signin-page').hide();
 		$('.select-provider-page').show();
+		currentPage = 'select-provider';
 	});
 
 	$('.back-to-provider-other').click(function(e) {
 		e.preventDefault();
 		$('.signin-other-page').hide();
 		$('.select-provider-page').show();
+		currentPage = 'select-provider';
 	});
 
 	$('.select-other-payroll-provider').click(function(e) {
 		e.preventDefault();
 		$('.select-provider-page').hide();
 		$('.signin-other-page').show();
+		currentPage = 'signin-other';
 		logEvent('select-provider', 'signup', 'other');
 	});
 });
