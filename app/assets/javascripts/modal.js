@@ -33,14 +33,14 @@ $(document).on('turbolinks:load', function() {
 
 	// LAUNCH
 	function resetPages() {
-		$('.security-page').show();
-		$('.select-provider-page').hide();
+		$('.security-page').hide();
+		$('.select-provider-page').show();
 		$('.signin-page').hide();
 		$('.signin-other-page').hide();
 		$('.find-provider-page').hide();
 		$('.confirmation-page').hide();
 		$('.provider-not-found-page').hide();
-		currentPage = 'security';
+		currentPage = 'select-provider';
 	}
 
 	$('.block-button').click(function() {
